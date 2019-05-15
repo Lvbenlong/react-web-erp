@@ -48,6 +48,7 @@
         "no-console": 0,
         "react/no-array-index-key": 0,
         "eqeqeq": 0,
-        "react/jsx-no-bind": 0
+        "react/jsx-no-bind": 0,
+        "no-script-url": 0
     }
 }

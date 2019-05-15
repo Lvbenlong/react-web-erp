@@ -1,14 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './page/home';
+import Layout from './component/layout';
 import * as serviceWorker from './serviceWorker';
 
+
+class App extends React.Component {
+  render() {
+    const LayoutRouter = (
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/product" component={Home} />
+          <Route path="/product-category" component={Home} />
+        </Switch>
+      </Layout>
+    );
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" render={() => LayoutRouter} />
+        </Switch>
+      </Router>
+    );
+  }
+}
+
 ReactDOM.render(
-  <HashRouter>
-    <App />
-  </HashRouter>,
+  <App />,
   document.getElementById('root'),
 );
 
